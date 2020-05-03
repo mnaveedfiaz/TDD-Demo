@@ -1,0 +1,25 @@
+<h1>Total Tax</h1>
+<% if @tax_amount.present? %>
+$<% @tax_amount %>
+<% end %>
+
+<%= form_with(:model, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :tax_percentage %>
+    <%= form.number_field :tax_percentage, id: :tax_percentage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.number_field :role, id: :employee_role %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Home', root_path %>
